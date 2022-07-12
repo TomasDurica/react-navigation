@@ -160,6 +160,28 @@ function MaterialBottomTabViewInner({
       renderIcon={({ route, focused, color }) => {
         const { options } = descriptors[route.key];
 
+        if (typeof options.focusedIcon === 'string' && focused) {
+          return (
+            <MaterialCommunityIcons
+              name={options.focusedIcon}
+              color={color}
+              size={24}
+              style={styles.icon}
+            />
+          );
+        }
+
+        if (typeof options.unfocusedIcon === 'string' && !focused) {
+          return (
+            <MaterialCommunityIcons
+              name={options.unfocusedIcon}
+              color={color}
+              size={24}
+              style={styles.icon}
+            />
+          );
+        }
+
         if (typeof options.tabBarIcon === 'string') {
           return (
             <MaterialCommunityIcons

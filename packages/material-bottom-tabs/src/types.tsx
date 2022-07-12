@@ -73,6 +73,9 @@ export type MaterialBottomTabNavigationOptions = {
     | string
     | ((props: { focused: boolean; color: string }) => React.ReactNode);
 
+  focusedIcon?: string;
+  unfocusedIcon?: string;
+
   /**
    * Badge to show on the tab icon, can be `true` to show a dot, `string` or `number` to show text.
    */
